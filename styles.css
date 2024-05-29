@@ -1,0 +1,22 @@
+
+body{
+background-color:#3A3B3C; 
+color: #ffffff;
+font-family: sans-serif;
+}
+
+#result{
+  margin:auto;
+  width:100%;
+  padding:9px;
+}
+
+#center{
+  justify-content:center;
+  display:flex;
+  text-align:center;
+}
+
+h2{
+  text-align:center;
+}
