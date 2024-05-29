@@ -1,0 +1,91 @@
+** start of HTML **
+
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+     <link rel="stylesheet" href="styles.css">
+     <meta charset="UTF-8">
+</head>
+
+<body>
+	<h2> Enter your text here:</h2>
+	<div id='center'>
+		<input id='text-input'></input>
+		<button id='check-btn' onclick='checkPalindrome()'>Submit</button>
+	</div>
+		
+	<div id='center'>
+		<div id='result'>  </div>
+	</div>
+</body>
+
+<script src="script.js"></script>
+	
+</html>
+
+** end of HTML **
+
+** start of CSS **
+
+body{
+background-color:#3A3B3C; 
+color: #ffffff;
+font-family: sans-serif;
+}
+
+#result{
+  margin:auto;
+  width:100%;
+  padding:9px;
+}
+
+#center{
+  justify-content:center;
+  display:flex;
+  text-align:center;
+}
+
+h2{
+  text-align:center;
+}
+
+** end of CSS **
+
+** start of Javascript **
+
+function checkPalindrome(){
+  let result="";
+  let cleantext="";
+  const palindrome= document.getElementById("text-input");
+
+  if (palindrome.value== ""){
+
+    alert("Please input a value");
+  }
+  else {
+
+    cleantext= palindrome.value.replace(/[^a-zA-Z0-9]/g,'');
+    cleantext= cleantext.toLowerCase();
+
+    result = document.getElementById("result");
+    result.innerHTML= cleantext +' is a palindrome';
+
+    let reversedtext= cleantext.split('').reverse().join('');
+
+    if (cleantext===reversedtext){
+      result = document.getElementById("result");
+      result.innerHTML= palindrome.value+' is a palindrome';
+    }
+
+    else{
+      result = document.getElementById("result");
+      result.innerHTML= palindrome.value+' is not a palindrome';
+    }
+    
+  }
+  
+}
+
+** end of JavaScript **
+
